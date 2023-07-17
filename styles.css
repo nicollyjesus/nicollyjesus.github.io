@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: teal;
+}
+
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+canvas{
+    background-color: #ffff;
+    cursor: crosshair;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.buttons{
+    display: flex;
+    padding: 10px;
+    background-color: darkslategray;
+    border-radius: 5px;
+}
+
+input{
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.clear{
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 10px;
+    margin-left: 10px;
+}
