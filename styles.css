@@ -5,7 +5,11 @@
 }
 
 body{
-    background-color: teal;
+    background-color: rgb(3, 36, 36);
+}
+
+#lineSizeInput {
+    margin-right: 1vw;
 }
 
 main{

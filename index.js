@@ -1,6 +1,14 @@
-const color = document.querySelector('input');
+const color = document.getElementById('cor');
 let screen = document.querySelector('canvas');
 
+var lineSizeInput = document.getElementById("lineSizeInput");
+
+var lineSize = parseInt(lineSizeInput.value);
+
+lineSizeInput.addEventListener("input", function() {
+
+    lineSize = parseInt(lineSizeInput.value);
+});
 let defaultColor = 'black';
 let canDraw = false;
 let mouseX = 0;
@@ -16,8 +24,9 @@ screen.addEventListener('mouseup', mouseUpEvent);
 
 function mouseDownEvent(e) {
     canDraw = true;
+    mouseX = e.clientX
+    mouseY = e.clientY
 }
-
 
 function mouseMoveEvent(e) {
     if (canDraw) {
@@ -27,14 +36,16 @@ function mouseMoveEvent(e) {
 
 function mouseUpEvent() {
     canDraw = false;
+    ctx.stroke()
+    ctx.beginPath();
 }
 
 function draw(x, y) {
     let pointX = x - screen.offsetLeft;
     let pointY = y - screen.offsetTop;
 
-    ctx.beginPath();
-    ctx.lineWidth = 5;
+
+    ctx.lineWidth = lineSize;
     ctx.lineJoin = "round";
     ctx.moveTo(mouseX, mouseY);
     ctx.lineTo(pointX, pointY);
