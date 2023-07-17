@@ -61,3 +61,14 @@ function draw(x, y) {
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     }
+
+    const saveButton = document.getElementById('save-button');
+saveButton.addEventListener('click', saveDrawing);
+
+function saveDrawing() {
+  const image = screen.toDataURL();
+  const link = document.createElement('a');
+  link.href = image;
+  link.download = 'meu_desenho.png';
+  link.click();
+}
